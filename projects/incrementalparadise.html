@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremental Paradise</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="project-header">
+        <img src="../images/incremental_paradise.png" alt="Incremental Paradise" class="project-image">
+    </div>
+
+    <div class="project-content">
+        <p>
+            Incremental Paradise is a standalone server. The game is unique, its a mix between a incremental & mmorpg. The main game loop involves completing sets of tasks to level up.
+            After gaining enough levels you can prestige, after gaining enough prestiges you can ascend, etc. There are currently 4 reset layers in the game, each new reset layer unlocks a new world.
+            Each world has unique mobs, crops, ores, trees, fish & bosses. Lots of crops and some trees have unique harveting methods that act like little minigames.
+            Players can also unlock a ton of unique active abilities to make harvesting resources feel fun and rewarding.
+        </p>
+        <p>
+            The game supports multiple servers. All player data, including inventories & storage menus are persistent across multiple servers.
+            There is even support for a player to have multiple inventories, as some worlds have unique inventories.
+            When a server is going to restart players will be transfered to another server instead of being kicked from the server altogether.
+        </p>
+        <p>
+            Incremental Paradise has been my most fun project. After working with Minecraft 1.8 for years, working with the latest versions of the game has been awesome.
+            All the new features added to the game bring about so many possibilities for what can be done in vanilla Minecraft. For example, display entities. Having these added to the game was a blast.
+            One of my favorite things I did with display entities is making a giant boss model. Complete with animations and no resource pack required.
+        </p>
+        <p>
+            Some of the systems & things I worked on
+            <list>
+                <li>Tasks system</li>
+                <li>Reset Layers</li>
+                <li>Skill system + 23 active skill abilities</li>
+                <li>Hundreds of unique upgrades</li>
+                <li>112 pets</li>
+                <li>260 armor pieces + accessories</li>
+                <li>10 boss fights</li>
+                <li>Display entity animation system</li>
+                <li>Cosmetics</li>
+                <li>Player data</li>
+            </list>
+        </p>
+        
+        <p>
+            Server can be played here:
+            <span id="copyLink" class="copy-text" onclick="copyToClipboard(event)">incrementalparadise.com</span>
+        </p>
+
+        <script>
+            function copyToClipboard(event) {
+                navigator.clipboard.writeText("incrementalparadise.com").then(() => {
+                    showTooltip(event);
+                });
+            }
+
+            function showTooltip(event) {
+                let tooltip = document.createElement("div");
+                tooltip.innerText = "Copied!";
+                tooltip.className = "tooltip";
+
+                document.body.appendChild(tooltip);
+                tooltip.style.left = event.pageX - 30 + "px";
+                tooltip.style.top = event.pageY - 30 + "px";
+
+                setTimeout(() => {
+                    tooltip.remove();
+                }, 1000);
+            }
+        </script>
+
+        <style>
+            .copy-text {
+                text-decoration: underline;
+                cursor: pointer;
+                display: inline-block;
+            }
+            .copy-text:hover {
+                color: #0056b3;
+            }
+            .tooltip {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 14px;
+                white-space: nowrap;
+                pointer-events: none;
+                animation: fadeOut 1s ease forwards;
+            }
+            @keyframes fadeOut {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+        </style>
+    </div>
+
+    <a href="mailto:jackson300007@gmail.com" class="email-button" title="Contact">
+        <img src="../images/envelope.png" alt="Contact" class="email-icon">
+    </a>
+
+</body>
+</html>
